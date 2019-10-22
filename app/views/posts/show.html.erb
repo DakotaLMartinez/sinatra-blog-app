@@ -5,3 +5,22 @@
   <input type="hidden" name="_method" value="delete" />
   <input type="submit" value="Delete Post" />
 </form>
+<section class="comments" style="padding-left: 5%">
+  <% @post.comments.each do |comment| %>
+    <div>
+      <h3><%= comment.title %></h3>
+      <p><%= comment.content %></p>
+    </div>
+  <% end %>
+  <form method="post" action="/posts/<%= @post.id %>/comments">
+    <p>
+      Title: <input type="text" name="title" />
+    </p>
+    <p>
+      Content: <textarea name="content"></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Add comment" />
+    </p>
+  </form>
+</section>

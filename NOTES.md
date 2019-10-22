@@ -10,3 +10,12 @@ edit      get '/posts/:id/edit'   has form to edit an existing post
 update    patch '/posts/:id'      handles form submission and redirects to another route (either posts  
           put '/posts/:id'        index or the updated post's show page)
 destroy   delete '/posts/:id'     handles form submission to delete a post and redirects to another route
+
+nested routes
+
+index     get '/posts/:post_id/comments'
+show      get '/posts/:post_id/comments/:id'
+new       get '/posts/:post_id/comments/new'
+create    post '/posts/:post_id/comments'
+edit      get '/posts/:post_id/comments/:id/edit'
+update    patch '/posts/:post
